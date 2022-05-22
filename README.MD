@@ -32,8 +32,8 @@ O projeto possui 3 serviços fundamentais:
 
 Existem 3 atores principais:
 - **User**: Qualquer usuário anônimo.
-- **Client**: Um usuário autenticado.
-- **Admin**: Um usuário com permissões de cadastro, alteração e exclusão de recursos.
+- **Client**: Um usuário autenticado e com capacidade de leitura dos dados de "tags" e "suppliers".
+- **Admin**: Um usuário com as mesmas de um *Client* e também com permissões de cadastro, alteração e exclusão dos dados de "tags" e "suppliers".
 
 ![arquitetura_node_js.png](/doc/aquitetura_node_js.drawio.png)
 
