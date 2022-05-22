@@ -1,6 +1,6 @@
 # Trabalho Final - NodeJs - PUC 2021/22
 
-Backend de uma aplicação de gerenciamento de prestadores de serviço utilizando MongoDB para persistência de dados e e json web tokens para autenticação e autorização dos acessos.
+Backend de uma aplicação de gerenciamento de prestadores de serviço utilizando MongoDB para persistência de dados e json web tokens para autenticação e autorização dos acessos.
 
 ## Alunos
 
@@ -12,7 +12,7 @@ Backend de uma aplicação de gerenciamento de prestadores de serviço utilizand
 1. [x] Definição do tema e escopo do trabalho.
 1. [x] Desenho da arquitetura.
 1. [x] Criar o banco usando mongodb contendo as collections users, suppliers e tags.
-1. [x] Criar serviço de aplicativo "users" em NodeJs expondo o endpoint de login para usuários registrados.
+1. [ ] Criar serviço de aplicativo "users" em NodeJs expondo o endpoint de login para usuários registrados.
 1. [x] Criar serviço de aplicativo "tags" em NodeJs expondo endpoints de cadastro, pesquisa, atualização e exclusão para usuários logados.
 1. [x] Criar serviço de aplicativo "suppliers" em NodeJs expondo endpoints de cadastro, pesquisa, atualização e exclusão para usuários logados.
 1. [ ] Adicionar middleware de segurança para autorizar acesso aos endpoints dos serviços "suppliers" e "tags" apenas para usuários logados.
@@ -30,28 +30,56 @@ O projeto possui 3 serviços fundamentais:
 - **Tags**: As Tags são termos reservados que servem para descrever os prestadores de serviço.
 - **Suppliers**: Realiza os cadastros e contém todas as lógicas de regras de negócios para realizar as buscas de prestadores de serviços de acordo com as tags informadas pelo cliente.
 
-Colar aqui a imagem do diagrama de arquitetura e falar um pouco sobre os as decisões.
+Existem 3 atores principais:
+- **User**: Qualquer usuário anônimo.
+- **Client**: Um usuário autenticado.
+- **Admin**: Um usuário com permissões de cadastro, alteração e exclusão de recursos.
+
+![arquitetura_node_js.png](/doc/aquitetura_node_js.drawio.png)
 
 ## Implementação
 
 Contar um pouco sobre o projeto, ex: os serviços estão hospedados no heroku e o banco de dados hospedado no atlas.
 
-## Endpoints
+## Prova de Conceito
 
-### users
+### Registre um usuário
+
+**POST** `http://server.com/v1/users/register`
+
+Request Body:
+
+``` json
+{
+   "name": "pduarte",
+   "password": "123",
+   "permission": [ "client", "admin" ]
+}
+```
+* por padrão as permissões são sempre de client
+
+Response Body:
+
+``` json
+{
+  "id": "022010d9-e6b1-4eab-8994-61fbaadbf7d7"
+}
+```
+
+### Utilize o usuário cadastro para logar
 
 **POST** `http://server.com.br/v1/users/login`
 
-REQUEST BODY:
+Request Body:
 
 ``` json
 {
   "username": "pduarte",
-  "password": "123" // will be converted to hash ex: 401357cf18542b4117ca59800657b64cce2a36d8ad4c56b6102a1e0b03049e97
+  "password": "123" // será convertido em hash, ex: 401357cf18542b4117ca59800657b64cce2a36d8ad4c56b6102a1e0b03049e97
 }
 ```
 
-RESPONSE BODY:
+Response Body:
 
 ``` json
 {
@@ -60,40 +88,26 @@ RESPONSE BODY:
 }
 ```
 
-**POST** `http://server.com/v1/users/register`
+### Caso queira ver todas as tags disponíveis
 
-REQUEST:
-
-``` json
-{
-   "name": "pduarte",
-   "password": "123",
-   "permission": [ "user", "admin" ]
-}
-```
-
-RESPONSE:
+**GET** `http://server.com/v1/tags`
 
 ``` json
-{
-  "id": "022010d9-e6b1-4eab-8994-61fbaadbf7d7"
-}
+[
+  {
+    "id": "64b2b804-4a38-4bdb-a82f-2f71407820f7", 
+    "tagName":"montador"
+  }, 
+  {
+    "id": "c9872548-eb7e-423c-b3a2-e72dc8dd49a8", 
+    "tagName": "mecanico"
+  }
+]
 ```
 
-### tags
-
-``` json
-{
-   "id":"64b2b804-4a38-4bdb-a82f-2f71407820f7",
-    "tagName": "montador"
-}
-```
-
-### suppliers
+### Pesquise por um prestador de serviço informando qual o termo procurado
 
 **GET** `http://server.com/v1/suppliers/search?tagName=:tags`
-
-Descrição: Pesquisa prestadores de serviço de acordo com os termos fornecidos pelo cliente:
 
 Response Body:
 
@@ -120,3 +134,49 @@ Response Body:
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the           1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap         into electronic typesetting, remaining essentially unchanged."
 }
 ```
+
+### Tente cadastrar uma nova TAG estando logado com um usuário que não tem permissão ADMIN
+
+**POST** `http://server.com/v1/tag`
+
+Request Body:
+
+``` json
+{
+  "id": "64b2b804-4a38-4bdb-a82f-2f71407820f7", 
+  "tagName": "teste"
+}
+```
+
+Response Body:
+
+``` json
+{
+  "success": false,
+  "message": "usuário não tem permissão de cadastrar novas tags."
+}
+```
+
+### Tente cadastrar um novo SUPPLIER estando logado com um usuário que não tem permissão ADMIN
+
+Response Body:
+
+``` json
+{
+  "success": false,
+  "message": "usuário não tem permissão de cadastrar novos prestadores."
+}
+```
+
+### Tente cadastrar uma nova TAG estando logado com um usuário que tem permissão ADMIN
+
+Request Body:
+
+``` json
+{
+  "id": "64b2b804-4a38-4bdb-a82f-2f71407820f7", 
+  "tagName": "teste"
+}
+```
+
+### Tente cadastrar um novo SUPPLIER estando logado com um usuário que tem permissão ADMIN
