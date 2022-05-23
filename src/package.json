@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,8 +20,12 @@
   },
   "homepage": "https://github.com/Arsilva91/nodejs_trabalho_final_puc#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.3.4"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4",
+    "save": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"

@@ -9,8 +9,8 @@ class SuppliersController{
         })
     }
     static listarSuppliersPorTag = (req, res) => {
-        const {tag} = req.query;        
-        suppliers.find({'tags': tag})
+        const {tags} = req.query;        
+        suppliers.find({'tags': tags})
             .populate('tags')
             .exec({}, (err, suppliers) => {
                 if(err){
