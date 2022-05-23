@@ -7,7 +7,7 @@ router
     // .get('/user', UserController.listarUsers)    
     // .get('/users/:id', UserController.listarUsersPorId)
     .post('/users/register', UserController.register)
-    .post('/users/sing_in', UserController.signIn)
+    .post('/users/sign_in', UserController.signIn)
     // .put('/users/:id', UserController.alterarUsers)
     // .delete('/users/:id', UserController.excluirUsers)
 
