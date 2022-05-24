@@ -26,7 +26,7 @@ class UserController{
             if(!user || !user.comparePassword(req.body.password)){
                 return res.status(401).json({ message: 'Falha de autenticação. usuário ou password invalido.' });
             }
-            return res.json({ token: jwt.sign({ email: user.email, name: user.name, _id: user._id }, process.env.SECRET_KEY) });
+            return res.json({ token: jwt.sign({ email: user.email, name: user.name, _id: user._id, roles: user.roles }, process.env.SECRET_KEY) });
         })
     }
     static loginRequired = (req, res, next) => {

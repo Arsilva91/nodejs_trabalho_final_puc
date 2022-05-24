@@ -9,11 +9,11 @@ class TagController{
     static listarLivrosPorTag = (req, res) => {
         const {tag} = req.query;        
         tags.find({'tag': tag}, {}, (err, tags) => {
-                if(err){
-                    res.status(500).send({message: `${err.message} - falha ao consultar tag.`})
-                } else {
-                    res.status(200).json(tags)
-                }                
+            if(err){
+                res.status(500).send({message: `${err.message} - falha ao consultar tag.`})
+            } else {
+                res.status(200).json(tags)
+            }                
         })
     }
     static listarTagPorId = (req, res) => {
