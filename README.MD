@@ -223,8 +223,8 @@ Response Body:
             }
         ],
         "rate": 0,
-        "latitude": 0,
-        "longitude": 0,
+        "latitude": 1,
+        "longitude": 2,
         "range": 1,
         "image": "imagem",
         "description": "descrição"
@@ -304,12 +304,43 @@ Response Body:
 		    }
 		],
 		"rate": 0,
-		"latitude": 0,
-		"longitude": 0,
+		"latitude": 1,
+		"longitude": 2,
 		"range": 1,
 		"image": "imagem",
 		"description": "descrição"
 	    }
+]
+```
+
+### Caso queira ver todos os prestadores por localiozação
+
+**GET** `https://finalnodejs-puc.herokuapp.com/suppliers/search/localization?latitude=1&longitude=2`
+
+Response Body:
+``` json
+[
+    {
+        "_id": "628cc8f24f4dd32b6fc7a40f",
+        "name": "Paulo Duarte",
+        "price": 70,
+        "tags": [
+            {
+                "_id": "6289546bbb13b09e15ee6c2c",
+                "tag": "Montador"
+            },
+            {
+                "_id": "628c3a6e2926ff5c1c439dc7",
+                "tag": "Pintor"
+            }
+        ],
+        "rate": 0,
+        "latitude": 1,
+        "longitude": 2,
+        "range": 1,
+        "image": "imagem",
+        "description": "descrição"
+    }
 ]
 ```
 
@@ -323,8 +354,8 @@ Response Body:
     "price": 60,
     "tags": ["6289546bbb13b09e15ee6c2c"],
     "rate": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 1,
+    "longitude": 2,
     "range": 1,
     "image": "imagem",
     "description": "descrição"
@@ -340,8 +371,8 @@ Response Body - 200:
         "6289546bbb13b09e15ee6c2c"
     ],
     "rate": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 1,
+    "longitude": 2,
     "range": 1,
     "image": "imagem",
     "description": "descrição",
@@ -359,8 +390,8 @@ Response Body - 200:
     "price": 70,
     "tags": ["6289546bbb13b09e15ee6c2c", "628c3a6e2926ff5c1c439dc7"],
     "rate": 0,
-    "latitude": 0,
-    "longitude": 0,
+    "latitude": 1,
+    "longitude": 2,
     "range": 1,
     "image": "imagem",
     "description": "descrição"
