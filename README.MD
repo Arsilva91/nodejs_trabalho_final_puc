@@ -43,16 +43,38 @@ Contar um pouco sobre o projeto, ex: os serviços estão hospedados no heroku e 
 
 ## Prova de Conceito
 
-### Registre um usuário
+### Login um usuário
 
-**POST** `http://server.com/v1/users/register`
+**POST** `https://finalnodejs-puc.herokuapp.com/sign_in`
 
 Request Body:
 
 ``` json
 {
-   "name": "pduarte",
-   "password": "123",
+	"email":"silva.rafael91k@gmail.com",
+	"password":"abc123"
+}
+```
+
+Response Body:
+
+``` json
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNpbHZhLnJhZmFlbDkxa0BnbWFpbC5jb20iLCJuYW1lIjoiQW5nZWxvIFJhZmFlbCIsIl9pZCI6IjYyOGJlOTczOWYzZWJlZmYyMWUwNWExZSIsImlhdCI6MTY1MzM1NjAxMX0.zVzhZGJV3RUAKqWktOX1JT-WdGUp-HzM53_mY8wIeBI"
+}
+```
+
+### Registre um usuário
+
+**POST** `https://finalnodejs-puc.herokuapp.com/users/register`
+
+Request Body:
+
+``` json
+{
+   "name": "Angelo Rafael da Silva",
+   "email": "silva.rafael91k@gmail.com
+   "password": "abc123",
    "permission": [ "client", "admin" ]
 }
 ```
@@ -62,29 +84,10 @@ Response Body:
 
 ``` json
 {
-  "id": "022010d9-e6b1-4eab-8994-61fbaadbf7d7"
-}
-```
-
-### Utilize o usuário cadastro para logar
-
-**POST** `http://server.com.br/v1/users/login`
-
-Request Body:
-
-``` json
-{
-  "username": "pduarte",
-  "password": "123" // será convertido em hash, ex: 401357cf18542b4117ca59800657b64cce2a36d8ad4c56b6102a1e0b03049e97
-}
-```
-
-Response Body:
-
-``` json
-{
-  "token": "401357cf18542b4117ca59800657b64cce2a36d8ad4c56b6102a1e0b03049e97",
-  "expires": "2022-05-21T20:48:46.000Z"
+	"name": "Angelo Rafael da Silva",
+	"email": "silva.rafael91k@gmail.com",
+	"_id": "628c37622926ff5c1c439dba",
+	"__v": 0
 }
 ```
 
