@@ -73,7 +73,7 @@ Request Body:
 ``` json
 {
    "name": "Angelo Rafael da Silva",
-   "email": "silva.rafael91k@gmail.com
+   "email": "silva.rafael91k@gmail.com"
    "password": "abc123",
    "permission": [ "client", "admin" ]
 }
@@ -93,49 +93,50 @@ Response Body:
 
 ### Caso queira ver todas as tags disponíveis
 
-**GET** `http://server.com/v1/tags`
+**GET** `https://finalnodejs-puc.herokuapp.com/tags`
 
 ``` json
 [
-  {
-    "id": "64b2b804-4a38-4bdb-a82f-2f71407820f7", 
-    "tagName":"montador"
-  }, 
-  {
-    "id": "c9872548-eb7e-423c-b3a2-e72dc8dd49a8", 
-    "tagName": "mecanico"
-  }
+	{
+		"_id": "6289546bbb13b09e15ee6c2c",
+		"tag": "Montador"
+	},
+	{
+		"_id": "628959598a0e75583c384f2c",
+		"tag": "Encanador"
+	}
 ]
 ```
 
 ### Pesquise por um prestador de serviço informando qual o termo procurado
 
-**GET** `http://server.com/v1/suppliers/search?tagName=:tags`
+**GET** `https://finalnodejs-puc.herokuapp.com/suppliers/search?tags=628959598a0e75583c384f2c`
 
 Response Body:
-
 ``` json
-{
-    "supplierId": "e5c48624-e5a3-4be8-bb32-3eb6387bfa30",
-    "name": "Prestador 3",
-    "price": 95,
-    "tags": [
-        {
-          "id": "64b2b804-4a38-4bdb-a82f-2f71407820f7", 
-          "tagName":"montador"
-        }, 
-        {
-          "id": "c9872548-eb7e-423c-b3a2-e72dc8dd49a8", 
-          "tagName": "mecanico"
-        }
-      ],
-    "rate": 4,
-    "latitude": 2,
-    "longitude": 9,
-    "range": 3,
-    "image": "https://thumbs.dreamstime.com/z/home-care-logo-design-template-vector-icon-128771044.jpg",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the           1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap         into electronic typesetting, remaining essentially unchanged."
-}
+[
+	{
+		"_id": "628959878a0e75583c384f2f",
+		"name": "Angelo Rafael",
+		"price": 50,
+		"tags": [
+			{
+				"_id": "6289546bbb13b09e15ee6c2c",
+				"tag": "Montador"
+			},
+			{
+				"_id": "628959598a0e75583c384f2c",
+				"tag": "Encanador"
+			}
+		],
+		"rate": 0,
+		"latitude": 0,
+		"longitude": 0,
+		"range": 1,
+		"image": "imagem",
+		"description": "descrição"
+	}
+]
 ```
 
 ### Tente cadastrar uma nova TAG estando logado com um usuário que não tem permissão ADMIN
