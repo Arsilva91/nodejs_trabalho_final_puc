@@ -2,6 +2,7 @@ import express from "express";
 import tags from "./tagsRouter.js"
 import suppliers from "./suppliersRouter.js";
 import users from "./usersRouter.js";
+import login from "./loginRouter.js"
 import jsonwebtoken from "jsonwebtoken";
 import dotenv from 'dotenv';
 
@@ -27,8 +28,9 @@ let checkToken = (req, res, next) => {
 const routes = (app) => {
     app.use(        
         express.json(),
-        users,
+        login,        
         checkToken,
+        users,
         tags,    
         suppliers        
     )
