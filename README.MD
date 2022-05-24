@@ -180,26 +180,107 @@ Response Body - 200:
 }
 ```
 
-### Pesquise por um prestador de serviço informando o id da tag
+### Caso queira ver todos os prestadores disponíveis
 
-**GET** `https://finalnodejs-puc.herokuapp.com/suppliers/search?tags=628959598a0e75583c384f2c`
+**GET** `https://finalnodejs-puc.herokuapp.com/suppliers`
 
 Response Body:
 ``` json
 [
-	{
+	 {
+        "_id": "628959878a0e75583c384f2f",
+        "name": "Angelo Rafael",
+        "price": 50,
+        "tags": [
+            {
+                "_id": "6289546bbb13b09e15ee6c2c",
+                "tag": "Montador"
+            },
+            {
+                "_id": "628959598a0e75583c384f2c",
+                "tag": "Encanador"
+            }
+        ],
+        "rate": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "range": 1,
+        "image": "imagem",
+        "description": "descrição"
+    },
+    {
+        "_id": "628cc8f24f4dd32b6fc7a40f",
+        "name": "Paulo Duarte",
+        "price": 70,
+        "tags": [
+            {
+                "_id": "6289546bbb13b09e15ee6c2c",
+                "tag": "Montador"
+            },
+            {
+                "_id": "628c3a6e2926ff5c1c439dc7",
+                "tag": "Pintor"
+            }
+        ],
+        "rate": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "range": 1,
+        "image": "imagem",
+        "description": "descrição"
+    }
+]
+```
+
+### Caso queira ver o prestador por id
+
+**GET** `https://finalnodejs-puc.herokuapp.com/suppliers/628959878a0e75583c384f2f`
+
+Response Body:
+``` json
+{
+    "_id": "628959878a0e75583c384f2f",
+    "name": "Angelo Rafael",
+    "price": 50,
+    "tags": [
+        {
+            "_id": "6289546bbb13b09e15ee6c2c",
+            "tag": "Montador"
+        },
+        {
+            "_id": "628959598a0e75583c384f2c",
+            "tag": "Encanador"
+        }
+    ],
+    "rate": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "range": 1,
+    "image": "imagem",
+    "description": "descrição"
+}
+```
+
+### Pesquise por um prestador de serviço informando o id da tag
+
+**GET** `https://finalnodejs-puc.herokuapp.com/suppliers/search?tags=6289546bbb13b09e15ee6c2c`
+
+Response Body:
+``` json
+[
+	 {
 		"_id": "628959878a0e75583c384f2f",
 		"name": "Angelo Rafael",
 		"price": 50,
 		"tags": [
-			{
-				"_id": "6289546bbb13b09e15ee6c2c",
-				"tag": "Montador"
-			},
-			{
-				"_id": "628959598a0e75583c384f2c",
-				"tag": "Encanador"
-			}
+		    {
+			"_id": "6289546bbb13b09e15ee6c2c",
+			"tag": "Montador"
+		    },
+		    {
+			"_id": "628959598a0e75583c384f2c",
+			"tag": "Encanador"
+		    }
 		],
 		"rate": 0,
 		"latitude": 0,
@@ -207,9 +288,103 @@ Response Body:
 		"range": 1,
 		"image": "imagem",
 		"description": "descrição"
-	}
+	    },
+	    {
+		"_id": "628cc8f24f4dd32b6fc7a40f",
+		"name": "Paulo Duarte",
+		"price": 70,
+		"tags": [
+		    {
+			"_id": "6289546bbb13b09e15ee6c2c",
+			"tag": "Montador"
+		    },
+		    {
+			"_id": "628c3a6e2926ff5c1c439dc7",
+			"tag": "Pintor"
+		    }
+		],
+		"rate": 0,
+		"latitude": 0,
+		"longitude": 0,
+		"range": 1,
+		"image": "imagem",
+		"description": "descrição"
+	    }
 ]
 ```
+
+### Caso queira cadastar suppliers
+
+**POST** `https://finalnodejs-puc.herokuapp.com/suppliers`
+
+``` json
+{      
+    "name": "Paulo Duarte",
+    "price": 60,
+    "tags": ["6289546bbb13b09e15ee6c2c"],
+    "rate": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "range": 1,
+    "image": "imagem",
+    "description": "descrição"
+}
+```
+
+Response Body - 200:
+``` json
+{
+    "name": "Paulo Duarte",
+    "price": 60,
+    "tags": [
+        "6289546bbb13b09e15ee6c2c"
+    ],
+    "rate": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "range": 1,
+    "image": "imagem",
+    "description": "descrição",
+    "_id": "628cc95d4f4dd32b6fc7a417"
+}
+```
+
+### Caso queira alterar suppliers
+
+**PUT** `https://finalnodejs-puc.herokuapp.com/suppliers/628c39af2926ff5c1c439dc2`
+
+``` json
+ {      
+    "name": "Paulo Duarte",
+    "price": 70,
+    "tags": ["6289546bbb13b09e15ee6c2c", "628c3a6e2926ff5c1c439dc7"],
+    "rate": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "range": 1,
+    "image": "imagem",
+    "description": "descrição"
+}
+```
+
+Response Body - 200:
+``` json
+{
+    "message": "Suppliers atualizado com sucesso"
+}
+```
+
+### Caso queira excluir um suppliers
+
+**DELETE** `https://finalnodejs-puc.herokuapp.com/suppliers/628cc95d4f4dd32b6fc7a417`
+
+Response Body - 200:
+``` json
+{
+    "message": "Suppliers excluido com sucesso."
+}
+```
+
 
 ### Tente cadastrar uma nova TAG estando logado com um usuário que não tem permissão ADMIN
 
