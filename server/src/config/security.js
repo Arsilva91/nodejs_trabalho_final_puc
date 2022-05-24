@@ -1,9 +1,11 @@
+import JWT from "jsonwebtoken";
+
 class Security {
 
     static isAuthenticated = (req, res, next) => {
         let authToken = req.headers["authorization"] || req.headers["Authorization"]
         if (!authToken) {
-            res.status(401).json({ message: 'Token de acesso requerida' }) }
+            res.status(401).json({ message: 'Token de acesso requerido' }) }
         else {
             let token = authToken.split(' ')[1] 
             req.token = token
