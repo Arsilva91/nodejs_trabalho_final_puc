@@ -104,11 +104,83 @@ Response Body:
 	{
 		"_id": "628959598a0e75583c384f2c",
 		"tag": "Encanador"
+	},
+	{
+		"_id": "628c3a6e2926ff5c1c439dc7",
+		"tag": "Pintor"
 	}
 ]
 ```
 
-### Pesquise por um prestador de serviço informando qual o termo procurado
+### Caso queira ver todas as tags disponíveis por id
+
+**GET** `https://finalnodejs-puc.herokuapp.com/tags/6289546bbb13b09e15ee6c2c`
+
+``` json
+	{
+		"_id": "6289546bbb13b09e15ee6c2c",
+		"tag": "Montador"
+	}
+```
+
+### Caso queira ver todas as tags disponíveis por uma descrição
+
+**GET** `https://finalnodejs-puc.herokuapp.com/tags/search?tag=Montador`
+
+``` json
+	{
+		"_id": "6289546bbb13b09e15ee6c2c",
+		"tag": "Montador"
+	}
+```
+
+### Caso queira cadastar tags
+
+**POST** `https://finalnodejs-puc.herokuapp.com/tags`
+
+``` json
+	{		
+		"tag": "Pintor"
+	}
+```
+
+Response Body - 200:
+``` json
+{
+	"tag": "Pintor",
+	"_id": "628c3a6e2926ff5c1c439dc7"
+}
+```
+
+### Caso queira alterar tags
+
+**PUT** `https://finalnodejs-puc.herokuapp.com/tags/628c39af2926ff5c1c439dc2`
+
+``` json
+	{		
+		"tag": "Pintor"
+	}
+```
+
+Response Body - 200:
+``` json
+{
+	"message": "Tag atualizado com sucesso"
+}
+```
+
+### Caso queira excluir uma tags
+
+**DELETE** `https://finalnodejs-puc.herokuapp.com/tags/628c39af2926ff5c1c439dc2`
+
+Response Body - 200:
+``` json
+{
+	"message": "Tag excluido com sucesso."
+}
+```
+
+### Pesquise por um prestador de serviço informando o id da tag
 
 **GET** `https://finalnodejs-puc.herokuapp.com/suppliers/search?tags=628959598a0e75583c384f2c`
 
