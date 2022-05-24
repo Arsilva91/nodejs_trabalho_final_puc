@@ -20,6 +20,18 @@ class SuppliersController{
                 }                
         })
     }
+    static listarSuppliersPorLatitudeLongitude = (req, res) => {
+        const {latitude, longitude} = req.query;        
+        suppliers.find({'latitude': latitude, 'longitude':longitude})
+            .populate('tags')
+            .exec({}, (err, suppliers) => {
+                if(err){
+                    res.status(500).send({message: `${err.message} - falha ao consultar suppliers por localização.`})
+                } else {
+                    res.status(200).json(suppliers)
+                }                
+        })
+    }
     static listarSuppliersPorId = (req, res) => {
         const {id} = req.params;
         suppliers.findById(id)
