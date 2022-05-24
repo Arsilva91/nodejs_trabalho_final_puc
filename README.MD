@@ -45,7 +45,7 @@ Contar um pouco sobre o projeto, ex: os serviços estão hospedados no heroku e 
 
 ### Login um usuário
 
-**POST** `https://finalnodejs-puc.herokuapp.com/sign_in`
+**POST** `https://final-nodejs-puc.herokuapp.com/sign_in`
 
 Request Body:
 
@@ -66,7 +66,7 @@ Response Body:
 
 ### Registre um usuário
 
-**POST** `https://finalnodejs-puc.herokuapp.com/users/register`
+**POST** `https://final-nodejs-puc.herokuapp.com/users/register`
 
 Request Body:
 
@@ -93,7 +93,7 @@ Response Body:
 
 ### Caso queira ver todas as tags disponíveis
 
-**GET** `https://finalnodejs-puc.herokuapp.com/tags`
+**GET** `https://final-nodejs-puc.herokuapp.com/tags`
 
 ``` json
 [
@@ -114,7 +114,7 @@ Response Body:
 
 ### Caso queira ver todas as tags disponíveis por id
 
-**GET** `https://finalnodejs-puc.herokuapp.com/tags/6289546bbb13b09e15ee6c2c`
+**GET** `https://final-nodejs-puc.herokuapp.com/tags/6289546bbb13b09e15ee6c2c`
 
 ``` json
 {
@@ -125,7 +125,7 @@ Response Body:
 
 ### Caso queira ver todas as tags disponíveis por uma descrição
 
-**GET** `https://finalnodejs-puc.herokuapp.com/tags/search?tag=Montador`
+**GET** `https://final-nodejs-puc.herokuapp.com/tags/search?tag=Montador`
 
 ``` json
 {
@@ -136,7 +136,7 @@ Response Body:
 
 ### Caso queira cadastar tags
 
-**POST** `https://finalnodejs-puc.herokuapp.com/tags`
+**POST** `https://final-nodejs-puc.herokuapp.com/tags`
 
 ``` json
 {		
@@ -154,7 +154,7 @@ Response Body - 200:
 
 ### Caso queira alterar tags
 
-**PUT** `https://finalnodejs-puc.herokuapp.com/tags/628c39af2926ff5c1c439dc2`
+**PUT** `https://final-nodejs-puc.herokuapp.com/tags/628c39af2926ff5c1c439dc2`
 
 ``` json
 {		
@@ -171,7 +171,7 @@ Response Body - 200:
 
 ### Caso queira excluir uma tags
 
-**DELETE** `https://finalnodejs-puc.herokuapp.com/tags/628c39af2926ff5c1c439dc2`
+**DELETE** `https://final-nodejs-puc.herokuapp.com/tags/628c39af2926ff5c1c439dc2`
 
 Response Body - 200:
 ``` json
@@ -182,7 +182,7 @@ Response Body - 200:
 
 ### Caso queira ver todos os prestadores disponíveis
 
-**GET** `https://finalnodejs-puc.herokuapp.com/suppliers`
+**GET** `https://final-nodejs-puc.herokuapp.com/suppliers`
 
 Response Body:
 ``` json
@@ -234,7 +234,7 @@ Response Body:
 
 ### Caso queira ver o prestador por id
 
-**GET** `https://finalnodejs-puc.herokuapp.com/suppliers/628959878a0e75583c384f2f`
+**GET** `https://final-nodejs-puc.herokuapp.com/suppliers/628959878a0e75583c384f2f`
 
 Response Body:
 ``` json
@@ -263,7 +263,7 @@ Response Body:
 
 ### Pesquise por um prestador de serviço informando o id da tag
 
-**GET** `https://finalnodejs-puc.herokuapp.com/suppliers/search?tags=6289546bbb13b09e15ee6c2c`
+**GET** `https://final-nodejs-puc.herokuapp.com/suppliers/search?tags=6289546bbb13b09e15ee6c2c`
 
 Response Body:
 ``` json
@@ -315,7 +315,7 @@ Response Body:
 
 ### Caso queira ver todos os prestadores por localiozação
 
-**GET** `https://finalnodejs-puc.herokuapp.com/suppliers/search/localization?latitude=1&longitude=2`
+**GET** `https://final-nodejs-puc.herokuapp.com/suppliers/search/localization?latitude=1&longitude=2`
 
 Response Body:
 ``` json
@@ -346,7 +346,7 @@ Response Body:
 
 ### Caso queira cadastar suppliers
 
-**POST** `https://finalnodejs-puc.herokuapp.com/suppliers`
+**POST** `https://final-nodejs-puc.herokuapp.com/suppliers`
 
 ``` json
 {      
@@ -382,7 +382,7 @@ Response Body - 200:
 
 ### Caso queira alterar suppliers
 
-**PUT** `https://finalnodejs-puc.herokuapp.com/suppliers/628c39af2926ff5c1c439dc2`
+**PUT** `https://final-nodejs-puc.herokuapp.com/suppliers/628c39af2926ff5c1c439dc2`
 
 ``` json
  {      
@@ -407,7 +407,7 @@ Response Body - 200:
 
 ### Caso queira excluir um suppliers
 
-**DELETE** `https://finalnodejs-puc.herokuapp.com/suppliers/628cc95d4f4dd32b6fc7a417`
+**DELETE** `https://final-nodejs-puc.herokuapp.com/suppliers/628cc95d4f4dd32b6fc7a417`
 
 Response Body - 200:
 ``` json
