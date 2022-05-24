@@ -72,10 +72,10 @@ Request Body:
 
 ``` json
 {
-   "name": "Angelo Rafael da Silva",
-   "email": "silva.rafael91k@gmail.com"
-   "password": "abc123",
-   "permission": [ "client", "admin" ]
+	"name": "Angelo Rafael da Silva",
+	"email": "silva.rafael91k@gmail.com"
+	"password": "abc123",
+	"permission": [ "client", "admin" ]
 }
 ```
 * por padrão as permissões são sempre de client
@@ -117,10 +117,10 @@ Response Body:
 **GET** `https://finalnodejs-puc.herokuapp.com/tags/6289546bbb13b09e15ee6c2c`
 
 ``` json
-	{
-		"_id": "6289546bbb13b09e15ee6c2c",
-		"tag": "Montador"
-	}
+{
+	"_id": "6289546bbb13b09e15ee6c2c",
+	"tag": "Montador"
+}
 ```
 
 ### Caso queira ver todas as tags disponíveis por uma descrição
@@ -128,10 +128,10 @@ Response Body:
 **GET** `https://finalnodejs-puc.herokuapp.com/tags/search?tag=Montador`
 
 ``` json
-	{
-		"_id": "6289546bbb13b09e15ee6c2c",
-		"tag": "Montador"
-	}
+{
+	"_id": "6289546bbb13b09e15ee6c2c",
+	"tag": "Montador"
+}
 ```
 
 ### Caso queira cadastar tags
@@ -139,9 +139,9 @@ Response Body:
 **POST** `https://finalnodejs-puc.herokuapp.com/tags`
 
 ``` json
-	{		
-		"tag": "Pintor"
-	}
+{		
+	"tag": "Pintor"
+}
 ```
 
 Response Body - 200:
@@ -157,9 +157,9 @@ Response Body - 200:
 **PUT** `https://finalnodejs-puc.herokuapp.com/tags/628c39af2926ff5c1c439dc2`
 
 ``` json
-	{		
-		"tag": "Pintor"
-	}
+{		
+	"tag": "Pintor"
+}
 ```
 
 Response Body - 200:
