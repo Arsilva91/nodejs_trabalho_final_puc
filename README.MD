@@ -67,16 +67,16 @@ Response Body:
 
 ### Registre um usuário
 
-**POST** `https://final-nodejs-puc.herokuapp.com/users/register`
+**POST** `https://final-nodejs-puc.herokuapp.com/users`
 
 Request Body:
 
 ``` json
 {
 	"name": "Angelo Rafael da Silva",
-	"email": "silva.rafael91k@gmail.com"
+	"email": "silva.rafael91k@gmail.com",
 	"password": "abc123",
-	"permission": [ "client", "admin" ]
+	"roles": [ "client", "admin" ]
 }
 ```
 * por padrão as permissões são sempre de client

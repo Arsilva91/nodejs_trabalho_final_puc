@@ -11,6 +11,7 @@ class Security {
             req.token = token
         }
     
+
         JWT.verify(req.token, process.env.SECRET_KEY, (err, decodeToken) => { 
             if (err) {
                 return res.status(401).json({ message: 'Acesso negado'})
@@ -23,7 +24,7 @@ class Security {
     
     static isAdmin = (req, res, next) => { 
         const roles = req.roles
-        if (!roles || !roles.contains('admin')) {
+        if (!roles || !roles.includes('admin')) {
             return res.status(403).json({ message: 'Acesso nao permitido'})
         }
         next()
