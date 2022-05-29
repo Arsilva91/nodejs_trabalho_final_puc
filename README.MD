@@ -428,9 +428,8 @@ Response Body - 200:
 Request Body:
 
 ``` json
-{
-  "id": "64b2b804-4a38-4bdb-a82f-2f71407820f7", 
-  "tagName": "teste"
+{		
+	"tag": "Pintor"
 }
 ```
 
@@ -444,6 +443,22 @@ Response Body:
 
 ### Tente cadastrar um novo SUPPLIER estando logado com um usuário que não tem permissão ADMIN
 
+Request Body:
+
+``` json
+{      
+    "name": "Paulo Duarte",
+    "price": 60,
+    "tags": ["6289546bbb13b09e15ee6c2c"],
+    "rate": 0,
+    "latitude": 1,
+    "longitude": 2,
+    "range": 1,
+    "image": "imagem",
+    "description": "descrição"
+}
+```
+
 Response Body:
 
 ``` json
@@ -451,16 +466,3 @@ Response Body:
     "message": "Acesso nao permitido"
 }
 ```
-
-### Tente cadastrar uma nova TAG estando logado com um usuário que tem permissão ADMIN
-
-Request Body:
-
-``` json
-{
-  "id": "64b2b804-4a38-4bdb-a82f-2f71407820f7", 
-  "tagName": "teste"
-}
-```
-
-### Tente cadastrar um novo SUPPLIER estando logado com um usuário que tem permissão ADMIN
