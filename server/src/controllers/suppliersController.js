@@ -9,12 +9,24 @@ class SuppliersController{
         })
     }
     static listarSuppliersPorTag = (req, res) => {
-        const {tag} = req.query;        
-        suppliers.find({'tags': tag})
+        const {tags} = req.query;        
+        suppliers.find({'tags': tags})
             .populate('tags')
             .exec({}, (err, suppliers) => {
                 if(err){
                     res.status(500).send({message: `${err.message} - falha ao consultar suppliers por tag.`})
+                } else {
+                    res.status(200).json(suppliers)
+                }                
+        })
+    }
+    static listarSuppliersPorLatitudeLongitude = (req, res) => {
+        const {latitude, longitude} = req.query;        
+        suppliers.find({'latitude': latitude, 'longitude':longitude})
+            .populate('tags')
+            .exec({}, (err, suppliers) => {
+                if(err){
+                    res.status(500).send({message: `${err.message} - falha ao consultar suppliers por localização.`})
                 } else {
                     res.status(200).json(suppliers)
                 }                
