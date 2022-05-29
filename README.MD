@@ -36,7 +36,13 @@ Existem 3 atores principais:
 - **Client**: Um usuário autenticado e com capacidade de leitura dos dados de "tags" e "suppliers".
 - **Admin**: Um usuário com as mesmas de um *Client* e também com permissões de cadastro, alteração e exclusão dos dados de "tags" e "suppliers".
 
+Na imagem seguinte temos uma visão geral de todos esses componentes e como eles se comunicam dentro da proposta arquitetural:
+
 ![arquitetura_node_js.png](/doc/aquitetura_node_js.drawio.png)
+
+Por outra perspectiva, temos o diagrama seguinte apresentando as entidades que compõem nosso domínio e como elas se relacionam:
+
+![domain model diagram](/doc/domain_model.png)
 
 ## Prova de Conceito
 
