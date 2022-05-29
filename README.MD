@@ -438,8 +438,7 @@ Response Body:
 
 ``` json
 {
-  "success": false,
-  "message": "usuário não tem permissão de cadastrar novas tags."
+    "message": "Acesso nao permitido"
 }
 ```
 
@@ -449,8 +448,7 @@ Response Body:
 
 ``` json
 {
-  "success": false,
-  "message": "usuário não tem permissão de cadastrar novos prestadores."
+    "message": "Acesso nao permitido"
 }
 ```
 
