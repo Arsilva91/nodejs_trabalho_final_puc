@@ -13,7 +13,7 @@ Backend de uma aplicação de gerenciamento de prestadores de serviço utilizand
 1. [x] Definição do tema e escopo do trabalho.
 1. [x] Desenho da arquitetura.
 1. [x] Criar o banco usando mongodb contendo as collections users, suppliers e tags.
-1. [ ] Criar serviço de aplicativo "users" em NodeJs expondo o endpoint de login para usuários registrados.
+1. [x] Criar serviço de aplicativo "users" em NodeJs expondo o endpoint de login para usuários registrados.
 1. [x] Criar serviço de aplicativo "tags" em NodeJs expondo endpoints de cadastro, pesquisa, atualização e exclusão para usuários logados.
 1. [x] Criar serviço de aplicativo "suppliers" em NodeJs expondo endpoints de cadastro, pesquisa, atualização e exclusão para usuários logados.
 1. [x] Adicionar middleware de segurança para autorizar acesso aos endpoints dos serviços "suppliers" e "tags" apenas para usuários logados.
