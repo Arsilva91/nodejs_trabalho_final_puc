@@ -38,10 +38,6 @@ Existem 3 atores principais:
 
 ![arquitetura_node_js.png](/doc/aquitetura_node_js.drawio.png)
 
-## Implementação
-
-Contar um pouco sobre o projeto, ex: os serviços estão hospedados no heroku e o banco de dados hospedado no atlas.
-
 ## Prova de Conceito
 
 ### Login um usuário
