@@ -1,12 +1,18 @@
 # Trabalho Final - NodeJs - PUC 2021/22
 
-Backend de uma aplicação de gerenciamento de prestadores de serviço utilizando MongoDB para persistência de dados e json web tokens para autenticação e autorização dos acessos.
+- **Curso**: Arquitetura de Software Distribuído
+- **Disciplina**: Arquitetura NodeJs
+- **Turma**: 2021/22
 
 ## Alunos
 
 - Ângelo Rafael da Silva
 - Paulo Henrique Fernandes Duarte
 - Franclis Galdino da Silva
+
+## Tema
+
+Desenvolvimento da arquitetura Backend de uma aplicação de gerenciamento de prestadores de serviço utilizando MongoDB para persistência de dados e json web tokens para autenticação e autorização dos acessos.
 
 ## Cronograma
 
@@ -19,7 +25,7 @@ Backend de uma aplicação de gerenciamento de prestadores de serviço utilizand
 1. [x] Adicionar middleware de segurança para autorizar acesso aos endpoints dos serviços "suppliers" e "tags" apenas para usuários logados.
 1. [x] Adicionar middleware de segurança para autorizar acesso de alterações dos dados dos serviços "suppliers" e "tags" apenas para usuários administradores.
 1. [x] Hospedar os serviços no heroku.
-1. [ ] Revisar e consolidar o estudo em modelo para o trabalho.
+1. [x] Revisar e consolidar o estudo em modelo para o trabalho.
 1. [ ] Juntar artefatos a serem entregues e publicar no Canvas.
 1. [ ] Alterar visibilidade do projeto no github para `public`.
 
