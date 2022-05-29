@@ -26,7 +26,7 @@ Desenvolvimento da arquitetura Backend de uma aplicação de gerenciamento de pr
 1. [x] Adicionar middleware de segurança para autorizar acesso de alterações dos dados dos serviços "suppliers" e "tags" apenas para usuários administradores.
 1. [x] Hospedar os serviços no heroku.
 1. [x] Revisar e consolidar o estudo em modelo para o trabalho.
-1. [ ] Juntar artefatos a serem entregues e publicar no Canvas.
+1. [x] Juntar artefatos a serem entregues e publicar no Canvas.
 1. [ ] Alterar visibilidade do projeto no github para `public`.
 
 ## Desenho da arquitetura
