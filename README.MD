@@ -76,7 +76,7 @@ Request Body:
 	"name": "Angelo Rafael da Silva",
 	"email": "silva.rafael91k@gmail.com",
 	"password": "abc123",
-	"roles": [ "client", "admin" ]
+	"roles":["admin"]
 }
 ```
 * por padrão as permissões são sempre de client
@@ -87,6 +87,9 @@ Response Body:
 {
 	"name": "Angelo Rafael da Silva",
 	"email": "silva.rafael91k@gmail.com",
+	 "roles": [
+		"admin"
+	    ],
 	"_id": "628c37622926ff5c1c439dba",
 	"__v": 0
 }
